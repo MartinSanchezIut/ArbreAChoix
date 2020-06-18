@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Choix </title>
+	<link rel="icon" href="img/book.ico" />
+
+
+	<!--    Materialize     -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+	<!--    CSS     -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+	<!--    Script JS     -->
+	<script type="text/javascript" src="JS/Choix.js" defer></script>
+	<script type="text/javascript" src="JS/interface_admin.js" defer></script>
+
+
+</head>
+<body class="green lighten-2">
+
+<div id="form" class="form">
+	<fieldset>
+		<label id="lblID" for="ID">ID : (se complette automatiquement)</label>
+		<input type="text" id="ID" name="id"><br>
+
+		<label for="fatherID">ID du père : (se complette automatiquement)</label>
+		<input type="text" id="fatherID" name="fid"><br>
+
+		<label for="qText">Texte en tant que question :</label>
+		<input type="text" id="qText" name="qText"><br>
+
+		<label for="rText">Texte en tant que réponse :</label>
+		<input type="text" id="rText" name="rText"><br><br>
+
+		<input type="button" id="ajouter" value="Ajouter !">
+		<input type="button" id="modifier" value="Modifier !">
+		<input type="button" id="annuler" value="Annuler">
+	</fieldset>
+
+</div>
+
+<div id="visual" >
+
+</div>
+
+
+</body>
+</html>
+

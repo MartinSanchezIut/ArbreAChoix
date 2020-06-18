@@ -1,0 +1,37 @@
+.divRep {
+    margin-top: 50px;
+    //background-color: darkcyan;
+
+}
+.rep {
+    //background-color: darkviolet;
+}
+
+
+
+.divTexte {
+    margin-top: 100px;
+    width: 90%;
+    margin-left: 5%;
+}
+.texte {
+    //background-color: chartreuse;
+
+}
+
+.form {
+    width: 40%;
+    display: block ;
+    position: fixed;
+    margin-left: 59.5%;
+}
+.form > fieldset {
+    background-color: white;
+}
+ul {
+    margin: 7px ;
+}
+#visual > ul > li > pre {
+    margin: 0px;
+    font-size: 14px;
+}
