@@ -31,17 +31,19 @@ class ModelChoix{
         }
     }
 
-    public static function modifierChoix($idFather, $id, $qText, $rText) {
+    public static function modifierChoix($idFather, $id, $qText, $rText, $imp) {
         try {
             $req = Model::$pdo->prepare('UPDATE CHOIX
                                         SET FATHERID = :idF,
                                             QTEXT = :qT,
-                                            RTEXT = :rT
+                                            RTEXT = :rT,
+                                            IMPORTANT = :imp
                                         WHERE ID = :id');
             $req->execute(array(
                 'idF' => $idFather,
                 'id' => $id,
                 'qT' => $qText,
+                'imp' => $imp,
                 'rT' => $rText));
             }catch (PDOException $e) {
                 echo $e->getMessage();
@@ -49,12 +51,14 @@ class ModelChoix{
             }
     }
 
-    public static function ajouterChoix($idFather, $qText, $rText) {
+    public static function ajouterChoix($idFather, $qText, $rText, $imp) {
         try {
-            $req = Model::$pdo->prepare('INSERT INTO CHOIX (FATHERID, QTEXT, RTEXT) VALUES (:idF, :qT, :rT)');
+            $req = Model::$pdo->prepare('INSERT INTO CHOIX (FATHERID, QTEXT, RTEXT, IMPORTANT)
+                                        VALUES (:idF, :qT, :rT, :imp)');
             $req->execute(array(
                 'idF' => $idFather,
                 'qT' => $qText,
+                'imp' => $imp,
                 'rT' => $rText));
             }catch (PDOException $e) {
                 echo $e->getMessage();

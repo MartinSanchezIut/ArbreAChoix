@@ -2,11 +2,12 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Choix </title>
-	<link rel="icon" href="img/book.ico" />
-
+	<title>Formulaire</title>
+	<link rel="icon" href="src/img/jfkcjemakbkidnfo.ico" />
 
     <!--    Materialize     -->
+	<link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
@@ -21,7 +22,20 @@
 	<script type="text/javascript" src="JS/interface.js" defer></script>
 	<script type="text/javascript" src="JS/scenario.js" defer></script>
 </head>
-<body class="green lighten-2">
+<body>
+
+<div class="navbar-fixed">
+	<nav class="vertpomme">
+		<div class="nav-wrapper container">
+			<a id="logo-container" href="https://www.cirad.fr/" target="_blank" class="brand-logo">
+				<img class="responsive-img" src="src/img/LogCirad.png" alt="Erreur de chargement">
+			</a>
+			<ul id="nav-mobile" class="right">
+				<li><a href="index.html"> <i class="material-icons left vert-text">home</i></a></li>
+			</ul>
+		</div>
+	</nav>
+</div>
 
 <div class="container" >
 	
@@ -30,8 +44,17 @@
 		<!-- Ajouter un icone pour retour en arriere -->
 
 
-		<p id="retour"> << Retour </p>
-		<p id="question" class="texte center-align card-panel flow-text grey lighten-2 z-depth-4">
+		<p id="retour">
+		<a class="waves-effect waves-light btn-small vert z-depth-2 white-text">
+			<i class="material-icons left white-text">undo</i>Retour</a>
+		</p>
+		<p id="retourdebut">
+			<a class="waves-effect waves-light btn-small vert z-depth-2 white-text">
+				<i class="material-icons left white-text">fast_rewind</i>Recommencer </a>
+		</p>
+
+
+		<p id="question" class="texte center-align card-panel flow-text vert z-depth-4 white-text">
 			La question est ici !
 		</p>
 
@@ -42,7 +65,7 @@
 	    <!--    L'autre div pour les réponses     -->
 	<div id="divreponses" class="divRep">
 
-		<p id="rep1" class="rep card-panel grey lighten-2 z-depth-4">
+		<p id="rep1" class="rep card-panel vert z-depth-4 white-text">
 			Voici une réponse
 		</p>
 
