@@ -17,7 +17,8 @@ document.getElementById("modifier").addEventListener("click", modifChoix);
 
 
 afficherArbre();
-
+cacherFilsDe(-1) ;
+montrerFilsDe(-1) ;
 
 function afficherArbre() {
     let anulBut = document.getElementById("annuler");
@@ -59,12 +60,10 @@ function afficherFilsDe(idFather, prefix) {
 }
 
 
-
-
-
 function creerLigne(id, idf, qText, rText, important, indent) {
     let rootDiv = document.createElement("div") ;
-    rootDiv.className = "z-depth-3 white" ;
+    rootDiv.id = id;
+    rootDiv.className = "z-depth-3 white " + idf ;
     rootDiv.style.marginLeft = indent + "px";
 
     let row1Div = document.createElement("div") ;
@@ -98,7 +97,7 @@ function creerLigne(id, idf, qText, rText, important, indent) {
     let butSuprimer = document.createElement("i");
     butSuprimer.innerHTML = "remove";
     butSuprimer.style.cursor = "pointer";
-    butSuprimer.className = " material-icons marginside";
+    butSuprimer.className = " material-icons marginside red-text";
     butSuprimer.addEventListener("click", function () {
         supprimerChoix(id) ;
     }) ;
@@ -136,13 +135,30 @@ function creerLigne(id, idf, qText, rText, important, indent) {
     cacherFils.innerHTML = "expand_less";
     cacherFils.style.cursor = "pointer";
     cacherFils.className = "material-icons marginside";
-    // Ajouter les events Listener
+    cacherFils.classList.add("black-text");
+    cacherFils.addEventListener("click", function () {
+        cacherFils.classList.remove("blue-text") ;
+        cacherFils.classList.add("black-text") ;
 
+        deroulerFils.classList.remove("black-text") ;
+        deroulerFils.classList.add("blue-text") ;
+
+        cacherFilsDe(id) ;
+    }) ;
     let deroulerFils = document.createElement("i");
     deroulerFils.innerHTML = "expand_more";
     deroulerFils.style.cursor = "pointer";
     deroulerFils.className = "material-icons marginside";
-    // Ajouter les events Listener
+    deroulerFils.classList.add("blue-text");
+    deroulerFils.addEventListener("click", function () {
+        deroulerFils.classList.remove("blue-text") ;
+        deroulerFils.classList.add("black-text") ;
+
+        cacherFils.classList.remove("black-text") ;
+        cacherFils.classList.add("blue-text") ;
+
+        montrerFilsDe(id) ;
+    }) ;
 
 
     row2icons.appendChild(isImportant) ;
@@ -157,7 +173,21 @@ function creerLigne(id, idf, qText, rText, important, indent) {
     visual.appendChild(rootDiv) ;
 }
 
-
+function montrerFilsDe(id) {
+    let list = document.getElementsByClassName(id) ;
+    console.log(list) ;
+    for (let i = 0; i < list.length; i++) {
+        list[i].style.display = "block" ;
+    }
+}
+function cacherFilsDe(id) {
+    let list = document.getElementsByClassName(id) ;
+    console.log(list) ;
+    for (let i = 0; i < list.length; i++) {
+        cacherFilsDe(list[i].id) ;
+        list[i].style.display = "none" ;
+    }
+}
 
 // Partie avec le formulaire
 function afficherFormModif(fatherID, ID, checked, qt, rt) {
@@ -245,7 +275,7 @@ function modifChoix() {
                     rText.value = "";
 
                     cacherForm();
-                    afficherArbre();
+                    document.location.reload(true);
                 });
                 requete.send(null);
             }else {
@@ -297,7 +327,7 @@ function envoyerform() {
                     rText.value = "";
 
                     cacherForm();
-                    afficherArbre();
+                    document.location.reload(true);
                 });
                 requete.send(null);
             }else {
@@ -340,7 +370,7 @@ function supprimerChoix(id) {
             req.send(null) ;
 
         }
-        afficherArbre();
+        document.location.reload(true);
         alert("Suppresion effectuée !") ;
     }
 }

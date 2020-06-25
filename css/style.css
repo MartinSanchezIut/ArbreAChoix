@@ -1,28 +1,20 @@
 .vert {
-   // color: rgb(31, 162, 46);
     background-color: rgb(31, 162, 46); !important;
-    //color: #1fa22e;
 }
 .vert:hover {
     background-color: rgb(31, 190, 46); !important;
 }
 .vert-text {
-// color: rgb(31, 162, 46);
     color: rgb(31, 162, 46); !important;
-//color: #1fa22e;
 }
-
 .rosefushia {
-    //color: #e2007a;
     color: rgb(226, 0, 122); !important
 }
 .vertanis{
-    //color: #dfdb00;
     background-color: rgb(223, 219, 0); !important
 }
 .vertpomme{
     background-color: #97bf0d; !important
-    //background-color: rgb(151, 191, 13);
 }
 .truncate {
     width: 100%;
@@ -32,31 +24,18 @@
 a{
     text-decoration: none;
     color: rgb(223, 219, 0); !important
-
 }
-
 .divRep {
     margin-top: 50px;
-    //background-color: darkcyan;
 }
-.rep {
-    //background-color: darkviolet;
-}
-
 #question {
     margin-top: 15px;
 }
-
 .divTexte {
     margin-top: 100px;
     width: 90%;
     margin-left: 5%;
 }
-.texte {
-    //background-color: chartreuse;
-
-}
-
 .form {
     width: 40%;
     display: block ;
@@ -84,7 +63,6 @@ ul {
 p {
   margin: 3px;
 }
-
 #logo-container > img {
     height: 64px;
 }

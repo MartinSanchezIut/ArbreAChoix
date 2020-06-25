@@ -1,8 +1,8 @@
 <?php
 
+// Require du model
 require_once('ModelChoix.php') ;
 
-
+// Stockage et encodage
 $tab = ModelChoix::recupPremierChoix() ;
-//var_dump($tab) ;
 echo json_encode($tab) ;
