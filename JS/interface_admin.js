@@ -20,6 +20,9 @@ afficherArbre();
 cacherFilsDe(-1) ;
 montrerFilsDe(-1) ;
 
+/*
+Affiche l'arbre
+ */
 function afficherArbre() {
     let anulBut = document.getElementById("annuler");
 
@@ -34,7 +37,10 @@ function afficherArbre() {
 }
 
 
-
+/*
+Affiche tout les fils de <idfather> (récursive)
+Prefix = décalage a gauche
+ */
 function afficherFilsDe(idFather, prefix) {
     let url = "php/afficherFilsDe.php?idf="+ idFather;
     let requete = new XMLHttpRequest();
@@ -59,7 +65,9 @@ function afficherFilsDe(idFather, prefix) {
     requete.send(null);
 }
 
-
+/*
+Fonction pour créer une ligne de l'interface administrateur
+ */
 function creerLigne(id, idf, qText, rText, important, indent) {
     let rootDiv = document.createElement("div") ;
     rootDiv.id = id;
@@ -173,6 +181,10 @@ function creerLigne(id, idf, qText, rText, important, indent) {
     visual.appendChild(rootDiv) ;
 }
 
+/*
+Affiche tout les fils de <id>
+Cache tout les fils de <id>
+ */
 function montrerFilsDe(id) {
     let list = document.getElementsByClassName(id) ;
     console.log(list) ;
@@ -210,6 +222,7 @@ function afficherFormModif(fatherID, ID, checked, qt, rt) {
     check.checked = checked === "1";
 }
 
+// Affiche le formulaire d'ajout avec fatherid en autocompletion
 function afficherForm(fatherID) {
     let fid = document.getElementById("fatherID");
     let check = document.getElementById("important");
@@ -228,10 +241,12 @@ function afficherForm(fatherID) {
     check.checked = false;
 }
 
+// Cache le form
 function cacherForm() {
     form.style.display = "none";
 }
 
+// Modification du choix selon le formulaire
 function modifChoix() {
     let id = document.getElementById("ID");
 
@@ -287,7 +302,7 @@ function modifChoix() {
         alert("Erreur: un id doit etre un chiffre !");
     }
 }
-
+// Ajout du choix selon le formulaire
 function envoyerform() {
     let fid = document.getElementById("fatherID");
     let qText = document.getElementById("qText");
@@ -339,7 +354,7 @@ function envoyerform() {
         alert("Erreur: un id doit etre un chiffre !");
     }
 }
-
+// Met tout les fils de ID dans tab
 function recupToutLesFils(id,  tab) {
     let url = "php/afficherFilsDe.php?idf="+ id;
     let requete = new XMLHttpRequest();
@@ -353,7 +368,7 @@ function recupToutLesFils(id,  tab) {
     });
     requete.send(null) ;
 }
-
+// Supprime un choix d'identifiant ID
 function supprimerChoix(id) {
     if (confirm("Etes vous sur ? Cette opération sera irréversible !")) {
 
