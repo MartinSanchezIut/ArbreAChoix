@@ -17,8 +17,7 @@ document.getElementById("modifier").addEventListener("click", modifChoix);
 
 
 afficherArbre();
-cacherFilsDe(-1) ;
-montrerFilsDe(-1) ;
+
 
 /*
 Affiche l'arbre
