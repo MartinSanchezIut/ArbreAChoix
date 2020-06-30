@@ -1,3 +1,6 @@
+/*
+listeChoix[] enpile les choix par lesquels passe l'utilisateur, retour revien a charger le dernier de la pile
+ */
 let retour = document.getElementById("retour");
 retour.addEventListener("click", function () {
     let id = listeChoix[listeChoix.length -1];
@@ -8,8 +11,14 @@ let retourdebut = document.getElementById("retourdebut");
 
 let listeChoix = [] ;
 let listeImportant = [] ;
+
+// Les requettes a la base de données sont elle asynchrones ?
 let async = true ;
 
+/*
+Affiche un choix a partir d'un ID
+ID = identifiant du choix dans la base
+ */
 function printChoix(id) {
     clearReponses();
 
@@ -104,7 +113,7 @@ function printChoix(id) {
 
 
 
-
+// Definis l'emplacement de la question par <text>
 function setQuestion(text, important) {
     let q = document.getElementById("question") ;
     q.innerHTML = text;
@@ -113,12 +122,13 @@ function setQuestion(text, important) {
         listeImportant.push(text) ;
     }
 }
-
+// Supprime toutes les réponses
 function clearReponses() {
     let repDiv = document.getElementById("divreponses") ;
     repDiv.innerHTML = "";
 }
 
+// Ajoute une réponse
 function addReponse(id, text, action) {
     let repDiv = document.getElementById("divreponses") ;
 

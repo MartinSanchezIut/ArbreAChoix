@@ -1,10 +1,13 @@
+/*
+Initialisation des element qui ne changeront jamais dans le programe
+ */
 document.getElementById("retour").style.display = "none";
 document.getElementById("retourdebut").style.display = "none";
 retourdebut.addEventListener("click", function () {
     document.location.reload(true);
 });
 
-
+// Premier appel de l'arbre
 let url = "php/afficherPremierChoix.php";
 let req = new XMLHttpRequest();
 req.open("GET", url, true);
